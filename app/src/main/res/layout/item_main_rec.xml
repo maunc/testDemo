@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_main_root"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y65"
+    android:gravity="center_vertical"
+    android:background="@color/gray_f4f4f4"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/y20"
+        android:layout_height="@dimen/y20"
+        android:layout_marginStart="@dimen/y15"
+        android:src="@drawable/icon_round" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/item_main_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/y2"
+        android:textColor="@color/black"
+        android:textSize="@dimen/y20"
+        android:textStyle="bold" />
+</LinearLayout>
