@@ -17,6 +17,12 @@ import com.us.mytestdemo.R
 class MainRecAdapter(private var data: List<String>, private var itemClick: MainRecItemClick) :
     RecyclerView.Adapter<MainRecAdapter.MainRecViewHolder>() {
 
+
+    companion object {
+        const val ContainerStartFlag = 0
+        const val FunStartFlag = 1
+    }
+
     @SuppressLint("InflateParams")
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainRecViewHolder {
         return MainRecViewHolder(

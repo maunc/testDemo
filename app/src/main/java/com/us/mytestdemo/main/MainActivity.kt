@@ -1,24 +1,37 @@
 package com.us.mytestdemo.main
 
+import android.content.Intent
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.us.mytestdemo.R
 import com.us.mytestdemo.base.BaseActivity
 import com.us.mytestdemo.databinding.ActivityMainBinding
+import com.us.mytestdemo.container.TestContainerActivity
+import com.us.mytestdemo.function.TestFunctionActivity
+import com.us.mytestdemo.javadebug.JavaDeBugActivity
 import com.us.mytestdemo.utils.ItemDecHelper
-import com.us.mytestdemo.utils.LogUtils
 
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main),
     MainRecAdapter.MainRecItemClick {
 
-    private val mainData = listOf("list的用法", "map的用法", "set的用法")
+    private val mainData = listOf("Kotlin中集合的用法", "Kotlin中各种函数的用法")
 
     override fun initData() {
         mDataBinding.mainRec.layoutManager = LinearLayoutManager(this)
         mDataBinding.mainRec.addItemDecoration(ItemDecHelper(ItemDecHelper.mainRec))
         mDataBinding.mainRec.adapter = MainRecAdapter(mainData, this)
+        mDataBinding.startJavaAc.setOnClickListener{
+            startActivity(Intent(this,JavaDeBugActivity::class.java))
+        }
     }
 
     override fun onItemClickListener(pos: Int) {
-        LogUtils.e(TAG, "$pos")
+        when (pos) {
+            MainRecAdapter.ContainerStartFlag -> {
+                startActivity(Intent(this, TestContainerActivity::class.java))
+            }
+            MainRecAdapter.FunStartFlag -> {
+                startActivity(Intent(this, TestFunctionActivity::class.java))
+            }
+        }
     }
 }

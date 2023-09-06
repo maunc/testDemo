@@ -1,4 +1,4 @@
-package com.us.mytestdemo.list
+package com.us.mytestdemo.container
 
 import com.us.mytestdemo.utils.LogUtils
 
@@ -32,7 +32,11 @@ class ListHelper {
     }
 
     fun toListRemove(pos: Int): ListHelper {
-        testList.removeAt(pos)
+        if(pos >= testList.size) {
+            LogUtils.e(TAG,"toListRemove:本次删除位置越界")
+        } else {
+            testList.removeAt(pos)
+        }
         return INSTANCE
     }
 

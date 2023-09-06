@@ -17,8 +17,14 @@
         android:theme="@style/Theme.MyTestDemo"
         tools:targetApi="31">
         <activity
-            android:name=".list.TestContainerActivity"
-            android:exported="false"/>
+            android:name=".javadebug.JavaDeBugActivity"
+            android:exported="false" />
+        <activity
+            android:name=".function.TestFunctionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".container.TestContainerActivity"
+            android:exported="false" />
         <activity
             android:name=".main.MainActivity"
             android:exported="true">

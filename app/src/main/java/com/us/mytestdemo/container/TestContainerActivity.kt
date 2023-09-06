@@ -1,4 +1,4 @@
-package com.us.mytestdemo.list
+package com.us.mytestdemo.container
 
 import com.us.mytestdemo.R
 import com.us.mytestdemo.base.BaseActivity
@@ -18,6 +18,9 @@ class TestContainerActivity : BaseActivity<ActivityTestContainerBinding>(R.layou
                 .toListAdd(10,"dawda")
                 .toListUpdate(10,"dwad")
                 .toListUpdate(3,"柯南")
+                .toListSelect()
+                .toListRemove(10)
+                .toListRemove(3)
                 .toListSelect()
         }
     }
